@@ -1,0 +1,22 @@
+{
+  // These tasks will run in order when initializing your CodeSandbox project.
+  "setupTasks": ["/usr/local/xray/entrypoint.sh"],
+
+  // These tasks can be run from CodeSandbox. Running one will open a log in the app.
+  "tasks": {
+    "run-xray": {
+      "name": "run-xray",
+      "command": "/usr/local/xray/web -config /etc/xray/config.json",
+      "preview": {
+        "port": 8080,
+        "prLink": "direct"
+      },
+      "runAtStart": true
+    },
+    "show-uuid": {
+      "name": "show-uuid",
+      "command": "head -n 1 /etc/xray/config.json",
+      "runAtStart": true
+    }
+  }
+}
